@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 97%;
+    --foreground: 220 30% 8%;
+
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 8%;
+
+    --primary: 215 90% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 14% 88%;
+    --secondary-foreground: 220 30% 12%;
+
+    --muted: 215 14% 90%;
+    --muted-foreground: 218 22% 26%;
+
+    --accent: 170 80% 24%;
+    --accent-foreground: 0 0% 100%;
+
+
+    --destructive: 0 80% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 70% 26%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 33 95% 34%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 212 85% 36%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 215 16% 62%;
+    --input: 215 16% 58%;
+    --ring: 215 90% 36%;
+
+
+    --radius: 0.75rem;
+
+    --panel-glow: 215 80% 48%;
+    --alert-high: 0 68% 48%;
+    --alert-medium: 38 85% 48%;
+    --alert-low: 215 80% 48%;
+
+    --sidebar-background: 215 15% 89%;
+    --sidebar-foreground: 220 18% 28%;
+    --sidebar-primary: 215 80% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 12% 86%;
+    --sidebar-accent-foreground: 220 18% 28%;
+    --sidebar-border: 215 12% 82%;
+    --sidebar-ring: 215 80% 48%;
+  }
+
+  .dark {
+    --background: 222 24% 7%;
+    --foreground: 0 0% 100%;
+
+    --card: 222 22% 11%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 222 22% 11%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 210 100% 66%;
+    --primary-foreground: 220 30% 8%;
+
+    --secondary: 220 16% 20%;
+    --secondary-foreground: 0 0% 97%;
+
+    --muted: 220 16% 18%;
+    --muted-foreground: 215 18% 82%;
+
+    --accent: 168 80% 55%;
+    --accent-foreground: 220 30% 8%;
+
+    --destructive: 0 90% 66%;
+    --destructive-foreground: 220 30% 8%;
+
+    --success: 150 70% 55%;
+    --success-foreground: 220 30% 8%;
+
+    --warning: 42 100% 62%;
+    --warning-foreground: 220 30% 8%;
+
+    --info: 205 100% 68%;
+    --info-foreground: 220 30% 8%;
+
+    --border: 220 14% 38%;
+    --input: 220 14% 40%;
+    --ring: 210 100% 66%;
+
+
+    --panel-glow: 215 80% 55%;
+    --alert-high: 0 68% 55%;
+    --alert-medium: 38 85% 55%;
+    --alert-low: 215 80% 55%;
+
+    --sidebar-background: 220 18% 11%;
+    --sidebar-foreground: 210 12% 75%;
+    --sidebar-primary: 215 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 210 12% 75%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 215 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-size: 17px;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    line-height: 1.55;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+    text-rendering: geometricPrecision;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    letter-spacing: -0.01em;
+  }
+
+  label, button, th {
+    font-weight: 700;
+  }
+
+  p, span, div, li, td, a {
+    text-shadow: none;
+  }
+
+  code, .font-mono {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+}
+
+/* Readability for seniors and minors: every text size lands between 14px and 16px.
+   Sizes are in rem so the accessibility font-size slider scales them too. */
+@layer utilities {
+  .text-\[6px\], .text-\[7px\], .text-\[8px\], .text-\[9px\],
+  .text-\[10px\], .text-\[11px\], .text-\[12px\], .text-\[13px\] {
+    font-size: 1rem !important; /* 16px */
+    font-weight: 600;
+  }
+  .text-\[14px\] { font-size: 1rem !important; }
+  .text-\[15px\] { font-size: 1.0625rem !important; }
+  .text-\[16px\] { font-size: 1.125rem !important; }
+  .text-xs { font-size: 1rem; font-weight: 600; }
+  .text-sm { font-size: 1.0625rem; font-weight: 600; }
+  .text-base { font-size: 1.125rem; font-weight: 600; }
+  .text-lg { font-size: 1.3125rem; }
+  .text-xl { font-size: 1.5rem; }
+
+  /* No washed-out text: faded opacity utilities snap back to full strength */
+  .text-muted-foreground\/50, .text-muted-foreground\/60,
+  .text-muted-foreground\/70, .text-muted-foreground\/80 {
+    color: hsl(var(--muted-foreground)) !important;
+  }
+  .opacity-50, .opacity-60, .opacity-70 { opacity: 0.9; }
+}
+
+
+
+/* ============ High-contrast theme ============ */
+.hc {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+  --primary: 220 100% 32%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 92%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 0 0% 94%;
+  --muted-foreground: 0 0% 18%;
+  --accent: 175 100% 20%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 100% 36%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 145 100% 22%;
+  --success-foreground: 0 0% 100%;
+  --warning: 35 100% 30%;
+  --warning-foreground: 0 0% 100%;
+  --info: 220 100% 32%;
+  --info-foreground: 0 0% 100%;
+  --border: 0 0% 0%;
+  --input: 0 0% 0%;
+  --ring: 220 100% 32%;
+  --alert-high: 0 100% 36%;
+  --alert-medium: 35 100% 30%;
+  --alert-low: 220 100% 32%;
+}
+
+.hc.dark {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 5%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 5%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 200 100% 62%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 0 0% 14%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 88%;
+  --accent: 165 100% 55%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 100% 62%;
+  --destructive-foreground: 0 0% 0%;
+  --success: 145 100% 55%;
+  --success-foreground: 0 0% 0%;
+  --warning: 45 100% 58%;
+  --warning-foreground: 0 0% 0%;
+  --border: 0 0% 100%;
+  --input: 0 0% 100%;
+}
+
+/* Extra contrast for interactive controls and alerts */
+.hc button,
+.hc [role='button'],
+.hc a[class*='rounded'],
+.hc input,
+.hc select,
+.hc textarea {
+  border-width: 2px !important;
+  border-style: solid;
+  border-color: hsl(var(--border));
+  font-weight: 800 !important;
+}
+
+.hc button:focus-visible,
+.hc a:focus-visible,
+.hc input:focus-visible,
+.hc [role='button']:focus-visible {
+  outline: 3px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.hc [class*='bg-destructive'],
+.hc [class*='bg-success'],
+.hc [class*='bg-warning'],
+.hc [class*='bg-primary'],
+.hc [class*='bg-accent'] {
+  border-color: hsl(var(--foreground)) !important;
+}
+
+.hc .text-muted-foreground {
+  color: hsl(var(--foreground)) !important;
+}
+
+.hc .panel-glow,
+.hc .panel-glow-active {
+  box-shadow: 0 0 0 2px hsl(var(--border));
+}
+
+
+
+@layer utilities {
+  .panel-glow {
+    box-shadow: 0 1px 3px hsl(var(--foreground) / 0.06),
+                0 0 0 1px hsl(var(--border));
+  }
+
+  .panel-glow-active {
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.1),
+                0 0 0 1px hsl(var(--primary) / 0.2);
+  }
+
+  .text-glow {
+    text-shadow: none;
+  }
+
+  .scanline {
+    background: none;
+  }
+
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .alert-pulse {
+    animation: alertPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes alertPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.4s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(215 90% 50% / 0.05) 0%, hsl(170 70% 42% / 0.05) 50%, hsl(215 90% 50% / 0.03) 100%);
+  }
+}
+
+/* Custom scrollbar - light */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Idle hint bubble — gentle hover up/down */
+@keyframes idle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}

@@ -1,0 +1,22 @@
+name = "msds-cloud"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Non-secret vars. Secrets go through: wrangler secret put <NAME>
+[vars]
+DATA_BACKEND = "memory" # "memory" | "supabase" (D1 later)
+
+[[durable_objects.bindings]]
+name = "DEVICE_SESSION"
+class_name = "DeviceSession"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["DeviceSession"]
+
+# Future D1 migration target (uncomment when ready):
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "msds"
+# database_id = "<your-d1-id>"

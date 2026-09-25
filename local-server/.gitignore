@@ -1,0 +1,8 @@
+# Downloaded binaries (fetch with: python fetch_binaries.py)
+bin/*
+!bin/.gitkeep
+
+.venv/
+__pycache__/
+*.pyc
+mediamtx.log

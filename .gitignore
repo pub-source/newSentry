@@ -1,0 +1,9 @@
+﻿node_modules/
+.venv/
+release/
+dist/
+MSDS-System-Installation-Media/
+*.log
+.env
+.env.*
+!.env.example

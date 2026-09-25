@@ -1,0 +1,18 @@
+{
+  "name": "msds-local-service",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "MSDS local-only service layer (FFmpeg / Whisper / camera abstractions). Runs on the Windows machine next to the CCTV LAN.",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.3",
+    "@types/node": "^22.16.5"
+  }
+}

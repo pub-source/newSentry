@@ -1,0 +1,29 @@
+# Native packaging only — never runs in the web preview.
+appId: com.msds.system
+productName: MSDS System
+directories:
+  output: release
+  buildResources: build
+files:
+  - dist/**/*
+  - electron/**/*
+  - package.json
+# The Python bridge + downloaded ffmpeg/mediamtx binaries ride along as
+# resources/local-server (never bundled into app.asar so they stay executable).
+extraResources:
+  - from: local-server
+    to: local-server
+    filter:
+      - "**/*"
+      - "!.venv"
+      - "!.venv/**"
+      - "!__pycache__"
+      - "!**/__pycache__/**"
+win:
+  target: [nsis]
+  artifactName: MSDS-System-Setup.exe
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  shortcutName: MSDS System

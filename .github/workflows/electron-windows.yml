@@ -1,0 +1,25 @@
+# Builds the Windows Electron installer (MSDS-System-Setup.exe).
+# Scaffolding only — no release is published and no secrets are required.
+name: Electron Windows build
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Build renderer + package installer
+        run: npm run electron:build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: msds-windows-installer
+          path: release/*.exe
+          if-no-files-found: warn

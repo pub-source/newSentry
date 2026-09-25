@@ -1,0 +1,1 @@
+ALTER TABLE public.wake_words ADD COLUMN action_type text NOT NULL DEFAULT 'sms' CHECK (action_type IN ('sms', 'email', 'both'));

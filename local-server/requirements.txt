@@ -1,0 +1,12 @@
+# MSD Local Camera Server dependencies
+# Install into the SAME interpreter that runs camera_server.py:
+#   "<python>" -m pip install -r requirements.txt
+
+fastapi>=0.110
+uvicorn>=0.27
+python-multipart>=0.0.9
+psutil>=5.9
+
+# CCTV microphone -> wake-word transcription.
+# The Whisper model itself is downloaded on first use (needs internet once).
+faster-whisper>=1.0.0

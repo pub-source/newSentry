@@ -72,3 +72,4 @@ npm run electron:build
 
 No installer is produced or published by this repository yet — the workflow in
 `.github/workflows/electron-windows.yml` builds it on demand.
+
